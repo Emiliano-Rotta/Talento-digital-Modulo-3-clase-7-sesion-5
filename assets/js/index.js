@@ -87,30 +87,60 @@
 // erick.saludar()
 // lorena.saludar()
 
+//Ejercicio 4
+// Consigna: Crea una clase Coche con propiedades marca, modelo, y año. Añade un método detalles que imprima un mensaje con la marca, el modelo y el año. Instancia un objeto de la clase y llama al método detalles.
 
-class Auto {
-    constructor(marca, modelo, anio) {
-        this.marca = marca
-        this.modelo = modelo
-        this.anio = anio
+// class Auto {
+//     constructor(marca, modelo, anio) {
+//         this.marca = marca
+//         this.modelo = modelo
+//         this.anio = anio
 
-    }
-    detalles() {
-        console.log(`Auto: ${this.marca} ${this.modelo}, Año:${this.anio}`)
-    }
-}
+//     }
+//     detalles() {
+//         console.log(`Auto: ${this.marca} ${this.modelo}, Año:${this.anio}`)
+//     }
+// }
 
-const autoActual = new Auto ("Renault", "Clio", 2007)
-const autoFuturo = new Auto ("Toyota", "Corolla", 2018)
-autoActual.detalles()
-autoFuturo.detalles()
+// const autoActual = new Auto ("Renault", "Clio", 2007)
+// const autoFuturo = new Auto ("Toyota", "Corolla", 2018)
+// autoActual.detalles()
+// autoFuturo.detalles()
 
-// Ejercicio 2: Añadir métodos a una clase
+// Ejercicio 5: Añadir métodos a una clase
 // Consigna: Crea una clase CuentaBancaria con las propiedades titular y saldo. Añade métodos depositar y retirar que permitan modificar el saldo de la cuenta. Añade un método consultarSaldo que imprima el saldo actual. Crea una instancia de CuentaBancaria y realiza algunas operaciones.
 
+class CuentaBancaria {
+    constructor(titular, saldo) {
+        this.titular = titular;
+        this.saldo = saldo;       
+    }
+    depositar(cantidad){
+        this.saldo += cantidad 
+        console.log(`saldo actual es: ${this.saldo}`)
+    }
+    retirar(cantidad){
+        if(cantidad <= this.saldo){
+            this.saldo -= cantidad 
+            console.log(`saldo actual es: ${this.saldo}`)
+        } else {
+            console.log(`tu saldo de ${this.saldo} es insuficiente para retirar ${cantidad}`)
+        }
+
+    }
+    consultarSaldo(){
+        console.log(`El saldo actual de ${this.titular} es ${this.saldo}`)
+    }
+}
 
 
 const miCuenta = new CuentaBancaria('Pedro', 1000);
 miCuenta.depositar(500); // Has depositado 500. Saldo actual: 1500
 miCuenta.retirar(200); // Has retirado 200. Saldo actual: 1300
 miCuenta.consultarSaldo(); // Saldo de Pedro: 1300
+
+
+// --------------Tarea para la hora asincronica 
+
+// Tomar el ejercicio 3 hecho con anterioridad, y hacerlo con clases para poder pasas distintos valores de comienzo: 
+// alguno comenzaran en 0; otros en 5 y otros en 10.
